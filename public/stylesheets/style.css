@@ -1,8 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR|Oswald|Playfair+Display|Yesteryear');
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  margin-top: 5%;
+  font-size: 4rem;
+  text-align: center;
+  color: purple;
+  font-family: 'Yesteryear', cursive;
+}
+
+.box div{
+  font-size: 1.4em;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 5%;
+  text-align: justify;
+  box-shadow: 10px 10px 10px 7px rgba(0,0,0,.7);
+}
+
+.box-wrapper {
+  font-size: 1.4em;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 5%;
+  text-align: justify;
+  box-shadow: 10px 10px 10px 7px rgba(0,0,0,.7);
 }
