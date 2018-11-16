@@ -5,7 +5,7 @@ var Class = require('../models/class');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Class.getClasses(function(err, classes) {
-    res.render('index', { title: 'E-Learning', classes: classes });
+    res.render('classes/index', { title: 'All Courses', classes: classes });
   }, 4);
 });
 
