@@ -19,7 +19,7 @@ router.get('/:id/details', function(req, res, next) {
     if(err) {
       throw err;
     }
-    res.render('classes/details', {class: classname });
+    res.render('classes/details', {title: classname.title ,class: classname });
   });
 });
 

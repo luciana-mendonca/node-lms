@@ -1,6 +1,6 @@
 <h1>{{ class.title }}</h1>
 <p>Instructor: <strong>{{class.instructor}}</strong></p>
-<div class="row box">
+<div class="row box-wrapper">
   <p>{{class.description}}</p>
   </br>
   <ul>
@@ -11,7 +11,7 @@
 </div>
 <!--Enroll class-->
 {{#if user}}
-  <form method="post" action="">
+  <form method="post" action="/students/classes/register">
     <input type="hidden" name="student_id" value="{{user._id}}">
     <input type="hidden" name="class_id" value="{{class._id}}">
     <input type="hidden" name="student_id" value="{{class.title}}">
