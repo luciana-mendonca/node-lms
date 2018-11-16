@@ -12,6 +12,11 @@ var LocalStrategy = require('passport-local'), Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
+// Connect to the database
+mongoose.connect('mongodb://localhost/node_lms');
+var db = mongoose.connection;
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
