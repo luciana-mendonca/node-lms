@@ -1,0 +1,22 @@
+<h1>{{ class.title }}</h1>
+<p>Instructor: <strong>{{class.instructor}}</strong></p>
+<div class="row box">
+  <p>{{class.description}}</p>
+  </br>
+  <ul>
+    {{#each class.lessons}}
+      <li>{{lesson_title}}</li>
+    {{/each}}
+  </ul>
+</div>
+<!--Enroll class-->
+{{#if user}}
+  <form method="post" action="">
+    <input type="hidden" name="student_id" value="{{user._id}}">
+    <input type="hidden" name="class_id" value="{{class._id}}">
+    <input type="hidden" name="student_id" value="{{class.title}}">
+    <button type="submit" name="button" class="btn btn-custom">Enroll</button>
+  </form>
+{{else}}
+  <p>You must log in to enroll in a class.</p>
+{{/if}}
