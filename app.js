@@ -12,8 +12,14 @@ var LocalStrategy = require('passport-local'), Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
+// Connect to the database
+mongoose.connect('mongodb://localhost/node_lms');
+var db = mongoose.connection;
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var classesRouter = require('./routes/classes');
 
 var app = express();
 require('dotenv').config();
@@ -69,6 +75,7 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/classes', classesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

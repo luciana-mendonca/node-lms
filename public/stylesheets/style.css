@@ -8,12 +8,12 @@ h1 {
   margin-top: 5%;
   font-size: 4rem;
   text-align: center;
-  color: purple;
+  color: #b8bad6;
   font-family: 'Yesteryear', cursive;
 }
 
 .box div{
-  font-size: 1.4em;
+  font-size: 1.4rem;
   background-color: #fff;
   margin: 0 auto;
   margin-top: 3rem;
