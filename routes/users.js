@@ -25,6 +25,7 @@ router.post('/signup', function(req, res, next) {
   // Validation with Express Validator
   req.checkBody('first_name', 'First name required.').notEmpty();
   req.checkBody('last_name', 'Last name required.').notEmpty();
+  req.checkBody('email', 'Email required').notEmpty();
   req.checkBody('email', 'It must be a valid email address.').isEmail();
   req.checkBody('username', 'Username required.').notEmpty();
   req.checkBody('password', 'Password field is required.').notEmpty();
@@ -37,7 +38,45 @@ router.post('/signup', function(req, res, next) {
       errors: errors
     });
   } else {
+    // Create a user
+    var newUser = new User({
+      email: email,
+      username: username,
+      password: password,
+      type: type
+    });
 
+    // Check type instructor or student, create users
+    if(type == 'student') {
+      console.log('Registering as student...');
+      var newStudent = new Student({
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        username: username
+      });
+      console.log(newUser);
+      // Save student in the user collection
+      User.saveStudent(newUser, newStudent, function(err, user) {
+        console.log('Student created!');
+      });
+    } else {
+      console.log('Registering as instructor...');
+      var newInstructor = new Instructor({
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        username: username
+      });
+
+      // Save instructor in the user collection
+      User.saveInstructor(newUser, newInstructor, function(err, user) {
+        console.log('Instructor created!');
+      });
+    }
+    // Flash message
+    req.flash('success', 'User added');
+    res.redirect('/');
   }
 });
 

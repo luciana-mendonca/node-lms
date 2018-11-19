@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 // Connect to the database
 mongoose.connect('mongodb://localhost/node_lms');
 var db = mongoose.connection;
-
+async = require('async');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
