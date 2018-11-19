@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR|Oswald|Playfair+Display|Yesteryear');
 
 body {
+  height: 100%;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -12,6 +14,14 @@ h1 {
   font-family: 'Yesteryear', cursive;
 }
 
+.banner {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/bg2.jpg');
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
 .box div{
   font-size: 1.4rem;
   background-color: #fff;
