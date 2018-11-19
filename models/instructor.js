@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
 
 var InstructorSchema = mongoose.Schema({
   first_name: {
@@ -15,7 +14,7 @@ var InstructorSchema = mongoose.Schema({
     type: String
   },
   classes: [{
-    class_id: {type: [mongoose.Schema.Types.ObjectId]}, //Map through ObjectId
+    class_id: {type: [mongoose.Schema.Types.ObjectId]},
     class_title: {
       type: String
     }
