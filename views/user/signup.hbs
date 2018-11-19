@@ -4,12 +4,27 @@
      <h1>Sign Up</h1>
        <form action="/user/signup" method="post">
          <div class="form-group">
-           <label for="name">Username</label>
-           <input type="text" id="username" name="name" class="form-control" required>
+           <label>Account Type</label>
+           <select name="type">
+             <option value="student">Student</option>
+             <option value="instructor">Instructor</option>
+           </select>
+         </div>
+         <div class="form-group">
+           <label for="name">First Name</label>
+           <input type="text" id="username" name="first_name" class="form-control" required>
+         </div>
+         <div class="form-group">
+           <label for="name">Last Name</label>
+           <input type="text" id="username" name="last_name" class="form-control" required>
          </div>
          <div class="form-group">
            <label for="email">E-mail</label>
            <input type="text" id="email" name="email" class="form-control" required>
+         </div>
+         <div class="form-group">
+           <label for="name">Username</label>
+           <input type="text" id="username" name="username" class="form-control" required>
          </div>
          <div class="form-group">
            <label for="password">Password</label>
