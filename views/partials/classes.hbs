@@ -1,10 +1,12 @@
-<h2>Featured Classes</h2>
-<div class="row box">
-  {{#each classes}}
-  <div class="col-md-5 col-md-offset-2">
-    <h4>{{title}}</h4>
-    <p>{{description}}</p>
-    <a class="button" href="/classes/{{_id}}/details">View Class</a>
+<div class="container">
+  <h2>Featured Classes</h2>
+  <div class="row box">
+    {{#each classes}}
+    <div class="col-md-5 col-md-offset-2">
+      <h4>{{title}}</h4>
+      <p>{{description}}</p>
+      <a class="button" href="/classes/{{_id}}/details">View Class</a>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
 </div>
