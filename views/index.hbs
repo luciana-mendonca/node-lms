@@ -1,14 +1,20 @@
 <div class="banner"></div>
 <div class="container">
-  <div class="row">
-    <h1>Welcome To E-learn</h1>
-    <p>Lorem ipsum dolor sit amet, consectetuer <em>adipiscing elit</em>, sed diam nonummy nibh euismod
-    tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-    nostrud exerci tation <strong>ullamcorper suscipit lobortis</strong> nisl ut aliquip ex ea commodo consequat.
-    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-    <div>
-      <a href="/users/signup" role="button" class="btn btn-custom">Sign up for free</a>
-    </div>
+  <div>
+    {{#if user}}
+      <h1>Welcome back, {{user.username}}!</h1>
+      <br />
+      <a href="/{{type}}s/classes" role="button" class="btn btn-custom">Dashboard</a>
+    {{else}}
+      <h1>Welcome To E-learn</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer <em>adipiscing elit</em>, sed diam nonummy nibh euismod
+      tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+      nostrud exerci tation <strong>ullamcorper suscipit lobortis</strong> nisl ut aliquip ex ea commodo consequat.
+      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+      <div>
+        <a href="/users/signup" role="button" class="btn btn-custom">Sign up for free</a>
+      </div>
+    {{/if}}
   </div>
   <br />
   <br />
