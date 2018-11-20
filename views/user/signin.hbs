@@ -2,14 +2,14 @@
   <div class="row justify-content-center">
     <div class="col-md-5 box-wrapper">
      <h1>Sign In</h1>
-     <form action="/signin" method="post">
+     <form action="/users/signin" method="post">
        <div class="form-group">
          <label for="username">Username</label>
-         <input type="text" id="username" name="name" class="form-control" required>
+         <input type="text" id="username" name="username" class="form-control">
        </div>
        <div class="form-group">
          <label for="password">Password</label>
-         <input type="password" id="password" name="password" class="form-control" required>
+         <input type="password" id="password" name="password" class="form-control">
        </div>
        <button type="submit" class="btn btn-custom">Sign In</button>
      </form>

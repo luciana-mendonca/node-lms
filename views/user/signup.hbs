@@ -1,12 +1,14 @@
 <div>
   <!--Validation Errors-->
-  {{#if errors}}
-    {{#each errors}}
-      <div class="alert alert-danger" role="alert">
-        {{msg}}
-      </div>
-    {{/each}}
-  {{/if}}
+  <div class="container">
+    {{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger" role="alert">
+          {{msg}}
+        </div>
+      {{/each}}
+    {{/if}}
+  </div>
   <div class="row justify-content-center">
    <div class="col-md-5 box-wrapper">
      <h1>Sign Up</h1>
