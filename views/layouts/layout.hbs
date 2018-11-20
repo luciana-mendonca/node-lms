@@ -9,7 +9,23 @@
   </head>
   <body>
     {{> header }}
-    {{{ messages }}}
+    <!--Success Messages-->
+    {{#if success_msg}}
+      <div class="container">
+        <div class="alert alert-success" role="alert">
+          {{success_msg}}
+        </div>
+      </div>
+    {{/if}}
+
+    <!--Error Messages-->
+    {{#if error_msg}}
+      <div class="container">
+        <div class="alert alert-danger" role="alert">
+          {{error_msg}}
+        </div>
+      </div>
+    {{/if}}
     {{{ body }}}
     <!--jQuery, Bootstrap, Popper.js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

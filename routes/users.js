@@ -75,7 +75,7 @@ router.post('/signup', function(req, res, next) {
       });
     }
     // Flash message
-    req.flash('success', 'User added');
+    req.flash('success_msg', 'User added');
     res.redirect('/');
   }
 });

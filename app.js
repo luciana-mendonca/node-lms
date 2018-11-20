@@ -63,12 +63,13 @@ app.use(expressValidator({
   }
 }));
 
-// connect-flash
+// connect-flash initialize
 app.use(flash());
 
-// Global Variables - express messages for the view
+// Global Variables - messages for the view
 app.use(function(req, res, next) {
-  res.locals.messages = require('express-messages')(req, res);
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
   next();
 });
 
