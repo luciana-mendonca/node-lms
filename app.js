@@ -13,7 +13,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 // Connect to the database
-mongoose.connect('mongodb://localhost/node_lms');
+mongoose.connect('mongodb://localhost/node_lms', { useNewUrlParser: true });
 var db = mongoose.connection;
 async = require('async');
 
