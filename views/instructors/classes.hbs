@@ -1,0 +1,28 @@
+<div class="container-fluid h-100">
+     <div class="row h-100">
+       <main class="col bg-faded py-3">
+         <span class="text-center">
+           <h1>{{instructor.first_name}}'s Dashboard</h1>
+         </span>
+         <div class="container">
+           <table class="table">
+             <thead class="" style="background-color: #b8bad6;">
+               <tr>
+                 <th scope="col">ClassID</th>
+                 <th scope="col">Class Name</th>
+               </tr>
+             </thead>
+             <tbody>
+               {{#each instructor.classes}}
+                 <tr>
+                   <td>{{class_id}}</td>
+                   <td>{{class_title}}</td>
+                   <td><a href="/classes/{{class_id}}/lessons"></a>View Lessons</td>
+                 </tr>
+               {{/each}}
+             </tbody>
+           </table>
+         </div>
+       </main>
+     </div>
+   </div>

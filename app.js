@@ -20,6 +20,8 @@ async = require('async');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var classesRouter = require('./routes/classes');
+var studentsRouter = require('./routes/students');
+var instructorsRouter = require('./routes/instructors');
 
 var app = express();
 require('dotenv').config();
@@ -88,6 +90,8 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/classes', classesRouter);
+app.use('/students', studentsRouter);
+app.use('/instructors', instructorsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -22,3 +22,9 @@ var StudentSchema = mongoose.Schema({
 });
 
 var Student = module.exports = mongoose.model('Student', StudentSchema);
+
+// Get student by username
+module.exports.getStudentByUsername = function(username, callback) {
+  var query = {username: username};
+  Student.findOne(query, callback);
+};
