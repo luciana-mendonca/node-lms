@@ -80,6 +80,9 @@ router.post('/signup', function(req, res, next) {
   }
 });
 
+
+// Sign in
+
 // Serialize user for the session to determine which data will be saved
 passport.serializeUser(function(user, done) {
   done(null, user._id);
@@ -88,19 +91,18 @@ passport.serializeUser(function(user, done) {
 // Deserialize user
 passport.deserializeUser(function(id, done) {
   User.getUserById(id, function(err, user) {
-      done(err, user);
+    done(err, user);
   });
 });
 
-// Sign in
 router.get('/signin', function(req, res, next) {
   res.render('user/signin', {title: 'Sign In'});
 });
 
-router.post('/signin', passport.authenticate('local', {failureRedirect: '/', failureFlash: true}), function(req, res, next) {
+router.post('/signin', passport.authenticate('local', {failureRedirect: '/users/signin', failureFlash: true}), function(req, res, next) {
   req.flash('success_msg', 'Logged in.');
   var usertype = req.user.type;
-  res.redirect = ('/' + usertype + 's/classes');
+  res.redirect('/'+usertype+'s/classes');
 });
 
 passport.use(new LocalStrategy(
@@ -110,7 +112,7 @@ passport.use(new LocalStrategy(
         throw err;
       }
       if(!user) {
-        return done(null, false, { message: username + 'is not registered.' });
+        return done(null, false, { message: 'User'+ ' ' + username + ' '+ 'is not registered.' });
       }
       User.comparePassword(password, user.password, function(err, isMatch) {
         if(err) {
@@ -119,11 +121,19 @@ passport.use(new LocalStrategy(
         if(isMatch) {
           return done(null, user);
         } else {
+          console.log('wrong password');
           return done(null, false, { message: 'Invalid password.' });
         }
       });
     });
   }
 ));
+
+// Logout
+router.get('/logout', function(req, res){
+	req.logout();
+	req.flash('success_msg', "Logged out");
+  	res.redirect('/');
+});
 
 module.exports = router;
