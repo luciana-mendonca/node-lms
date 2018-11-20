@@ -66,6 +66,16 @@ app.use(expressValidator({
 // connect-flash initialize
 app.use(flash());
 
+// Global user object to use in any route
+app.get('*', function(req, res, next) {
+  // Add user to res.locals
+  res.locals.user = req.user || null;
+  if(req.user) {
+    res.locals.type = req.user.type;
+  }
+  next();
+});
+
 // Global Variables - messages for the view
 app.use(function(req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
