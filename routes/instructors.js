@@ -31,4 +31,9 @@ router.post('/classes/register', function(req, res) {
   res.redirect('/instructors/classes');
 });
 
+// Lessons
+router.get('/classes/:id/lessons/new', function(req, res, next) {
+  res.render('instructors/newlesson');
+});
+
 module.exports = router;
