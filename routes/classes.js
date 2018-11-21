@@ -23,4 +23,16 @@ router.get('/:id/details', function(req, res, next) {
   });
 });
 
+// Lessons
+router.get('/:id/lessons', function(req, res, next) {
+  var id = req.params.id;
+  Class.getClassById(id, function(err, classname) {
+    if(err) {
+      throw err;
+    }
+    res.render('classes/lessons', { class: classname });
+  });
+});
+
+
 module.exports = router;
