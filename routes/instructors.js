@@ -31,4 +31,26 @@ router.post('/classes/register', function(req, res) {
   res.redirect('/instructors/classes');
 });
 
+// Lessons
+router.get('/classes/:id/lessons/new', function(req, res, next) {
+  res.render('instructors/newlesson', {title: 'New Lesson', class_id: req.params.id});
+});
+
+router.post('/classes/:id/lessons/new', function(req, res, next) {
+  var info = [];
+  info['class_id'] = req.params.id;
+  info['lesson_number'] = req.body.lesson_number;
+  info['lesson_title'] = req.body.lesson_title;
+  info['lesson_body'] = req.body.lesson_body;
+
+  Class.addLesson(info, function(err, lesson) {
+    if(err) {
+      throw err;
+    }
+    console.log('sending');
+  });
+  req.flash('success_msg', 'Lesson added.');
+  res.redirect('/instructors/classes');
+});
+
 module.exports = router;
