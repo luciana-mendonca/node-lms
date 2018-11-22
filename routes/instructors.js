@@ -36,6 +36,7 @@ router.get('/classes/:id/lessons/new', function(req, res, next) {
   res.render('instructors/newlesson', {title: 'New Lesson', class_id: req.params.id});
 });
 
+// Create new lesson
 router.post('/classes/:id/lessons/new', function(req, res, next) {
   var info = [];
   info['class_id'] = req.params.id;
@@ -51,6 +52,11 @@ router.post('/classes/:id/lessons/new', function(req, res, next) {
   });
   req.flash('success_msg', 'Lesson added.');
   res.redirect('/instructors/classes');
+});
+
+// Edit lesson
+router.get('/classes/:id/lesson/edit', function(req, res, next) {
+  res.render('instructors/editlesson', {title: 'Edit Lesson', lesson_id: req.params.id});
 });
 
 module.exports = router;

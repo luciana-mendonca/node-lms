@@ -12,6 +12,8 @@
                  <th scope="col">Class Name</th>
                  <th scope="col">All Lessons</th>
                  <th scope="col">Create Lesson</th>
+                 <th scope="col">Edit</th>
+                 <th scope="col">Delete</th>
                </tr>
              </thead>
              <tbody>
@@ -21,6 +23,8 @@
                    <td>{{class_title}}</td>
                    <td><a href="/classes/{{class_id}}/lessons">View Lessons</a></td>
                    <td><a href="/instructors/classes/{{class_id}}/lessons/new">Add New Lesson</a></td>
+                   <td><a href="/instructors/classes/{{class_id}}/lesson/edit">Edit Lesson</a></td>
+                   <td><a href="/instructors/classes/{{class_id}}/lessons/{{lesson_number}}/delete">Delete Lesson</a></td>
                  </tr>
                {{/each}}
              </tbody>
