@@ -48,15 +48,49 @@ router.post('/classes/:id/lessons/new', function(req, res, next) {
     if(err) {
       throw err;
     }
-    console.log('sending');
   });
   req.flash('success_msg', 'Lesson added.');
   res.redirect('/instructors/classes');
 });
 
-// Edit lesson
-router.get('/classes/:id/lesson/edit', function(req, res, next) {
-  res.render('instructors/editlesson', {title: 'Edit Lesson', lesson_id: req.params.id});
+// Edit lesson form
+router.get('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) {
+  var lesson_number = req.params.lesson_number;
+  var id = req.params.id;
+
+  Class.getClassById(id, function(err, classname) {
+    var lesson;
+    if(err) {
+      throw err;
+    }
+    // Get specific lesson that matches the id
+    for(var i = 0; i < classname.lessons.length; i++) {
+      if(classname.lessons[i].lesson_number == lesson_number) {
+        lesson = classname.lessons[i];
+      }
+    }
+    console.log(lesson._id);
+    res.render('instructors/editlesson', {title: 'Edit Lesson', lesson_number: lesson.lesson_number, lesson_title: lesson.lesson_title, lesson_body: lesson.lesson_body, class_id: id});
+  });
+});
+
+router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) {
+  var lesson_number = req.params.lesson_number;
+  var id = req.params.id;
+  var info = [];
+
+  info['class_id'] = req.params.id;
+  info['lesson_number'] = req.body.update_lesson_number;
+  info['lesson_title'] = req.body.update_lesson_title;
+  info['lesson_body'] = req.body.update_lesson_body;
+
+  Class.updateLesson(info, function(err, info) {
+    if(err) {
+      throw err;
+    }
+    req.flash('success_msg', 'Lesson updated.');
+    res.render('instructors/classes', {lesson_number: lesson_number, lesson_title: lesson_title, lesson_body: lesson_body});
+  });
 });
 
 module.exports = router;

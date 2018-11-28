@@ -45,3 +45,40 @@ module.exports.addLesson = function (info, callback) {
     callback
   );
 };
+
+// Update Lesson
+module.exports.updateLesson = function (info, callback) {
+  class_id = info['class_id'];
+  lesson_number = info['lesson_number'];
+  lesson_title = info['lesson_title'];
+  lesson_body = info['lesson_body'];
+
+  Class.findById(class_id, function (err, classname) {
+    console.log('classname: ' + classname);
+
+    if (err) {
+      throw err;
+    }
+
+    var lessons = classname.lessons;
+
+    var lesson;
+    for(var i = 0; i < lessons.length; i++) {
+      if(lessons[i].lesson_number == lesson_number) {
+        lesson = lessons[i];
+        console.log('lesson found: ' + lesson)
+        lesson.lesson_number = lesson_number;
+        lesson.lesson_title = lesson_title;
+        lesson.lesson_body = lesson_body;
+      }
+    }
+    console.log('Lesson id: ' + lesson._id);
+
+    Class.findByIdAndUpdate(
+      class_id,
+      {$set: {"lessons": lessons}},
+      {safe: true},
+      callback
+    );
+  });
+};
