@@ -72,8 +72,7 @@ module.exports.updateLesson = function (info, callback) {
         lesson.lesson_body = lesson_body;
       }
     }
-    console.log('Lesson id: ' + lesson._id);
-
+    
     Class.findByIdAndUpdate(
       class_id,
       {$set: {"lessons": lessons}},

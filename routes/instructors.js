@@ -80,11 +80,11 @@ router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) 
   var info = [];
 
   info['class_id'] = req.params.id;
-  info['lesson_number'] = req.body.update_lesson_number;
+  info['lesson_number'] = req.params.lesson_number;
   info['lesson_title'] = req.body.update_lesson_title;
   info['lesson_body'] = req.body.update_lesson_body;
 
-  Class.updateLesson(info, function(err, info) {
+  Class.updateLesson(info, function(err, lesson) {
     if(err) {
       throw err;
     }
