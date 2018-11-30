@@ -54,15 +54,13 @@ module.exports.updateLesson = function (info, callback) {
   lesson_body = info['lesson_body'];
 
   Class.findById(class_id, function (err, classname) {
-    console.log('classname: ' + classname);
-
     if (err) {
       throw err;
     }
 
     var lessons = classname.lessons;
-
     var lesson;
+
     for(var i = 0; i < lessons.length; i++) {
       if(lessons[i].lesson_number == lesson_number) {
         lesson = lessons[i];
@@ -72,7 +70,7 @@ module.exports.updateLesson = function (info, callback) {
         lesson.lesson_body = lesson_body;
       }
     }
-    
+
     Class.findByIdAndUpdate(
       class_id,
       {$set: {"lessons": lessons}},

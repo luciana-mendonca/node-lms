@@ -79,17 +79,23 @@ router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) 
   var id = req.params.id;
   var info = [];
 
-  info['class_id'] = req.params.id;
-  info['lesson_number'] = req.params.lesson_number;
-  info['lesson_title'] = req.body.update_lesson_title;
-  info['lesson_body'] = req.body.update_lesson_body;
-
-  Class.updateLesson(info, function(err, lesson) {
+  Instructor.getInstructorByUsername(req.user.username, function(err, instructor) {
     if(err) {
       throw err;
     }
-    req.flash('success_msg', 'Lesson updated.');
-    res.render('instructors/classes', {lesson_number: lesson_number, lesson_title: lesson_title, lesson_body: lesson_body});
+
+    info['class_id'] = req.params.id;
+    info['lesson_number'] = req.params.lesson_number;
+    info['lesson_title'] = req.body.update_lesson_title;
+    info['lesson_body'] = req.body.update_lesson_body;
+
+    Class.updateLesson(info, function(err, lesson) {
+      if(err) {
+        throw err;
+      }
+      req.flash('success_msg', 'Lesson updated.');
+      res.render('instructors/classes', {instructor: instructor, lesson_number: lesson.lesson_number, lesson_title: lesson.lesson_title, lesson_body: lesson.lesson_body});
+    });
   });
 });
 

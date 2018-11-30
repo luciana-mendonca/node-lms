@@ -23,11 +23,12 @@
                <td>{{lesson_title}}</td>
                <td><a href="/classes/{{../class._id}}/lessons/{{lesson_number}}">View Lesson</a></td>
                <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/edit">Edit Lesson</a></td>
-               <td><a href="/instructors/classes/{{lesson_id}}/lessons/{{lesson_number}}/delete">Delete Lesson</a></td>
+               <td><a href="/instructors/classes/{{../class._id}}/lessons/{{lesson_number}}/delete">Delete Lesson</a></td>
              </tr>
            {{/each}}
          </tbody>
        </table>
+       <a href="/instructors/classes/" role="button" class="btn btn-custom">Back to classes</a>
      </div>
    </main>
  </div>
