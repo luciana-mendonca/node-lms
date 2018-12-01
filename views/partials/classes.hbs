@@ -1,11 +1,12 @@
 <div class="container">
-  <h2>Featured Classes</h2>
+  <h1>Featured Classes</h1>
   <div class="row box">
     {{#each classes}}
     <div class="col-md-5 col-md-offset-2">
       <h4>{{title}}</h4>
       <p>{{description}}</p>
-      <a class="button" href="/classes/{{_id}}/details">View Class</a>
+      <br />
+      <a class="btn btn-custom" href="/classes/{{_id}}/details">View Class</a>
     </div>
     {{/each}}
   </div>

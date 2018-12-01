@@ -1,19 +1,19 @@
 <main class="col bg-faded py-3" style="margin-top: 5%;">
   <div class="container box-wrapper">
-    <form action="/instructors/classes/{{class_id}}/lessons/new" method="post">
-         <h1>New Lesson</h1>
+    <form action="/instructors/classes/{{class_id}}/lesson/{{lesson_number}}/edit" method="post">
+         <h1>Edit Lesson</h1>
       </span>
       <div class="form-group">
         <label for="name">Lesson number: </label>
-        <input class="form-control" name="lesson_number" type="text" required>
+        <input class="form-control" name="update_lesson_number" value="{{lesson_number}}" type="text" disabled>
       </div>
       <div class="form-group">
         <label for="name">Lesson title: </label>
-        <input class="form-control" name="lesson_title" type="text" required>
+        <input class="form-control" name="update_lesson_title" type="text" value="{{lesson_title}}">
       </div>
       <div class="form-group">
       <label for="exampleFormControlTextarea1">Content: </label>
-      <textarea class="form-control" name="lesson_body" id="exampleFormControlTextarea1" rows="15" required></textarea>
+      <textarea class="form-control" name="update_lesson_body" id="exampleFormControlTextarea1" rows="15">{{lesson_body}}</textarea>
     </div>
       <button type="submit" class="btn btn-custom mb-2"><i class="far fa-save" style="font-size:25px"></i> Save</button>
     </form>

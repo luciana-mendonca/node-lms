@@ -11,7 +11,9 @@
            <tr>
              <th scope="col">Lesson Number</th>
              <th scope="col">Lesson Title</th>
-             <th scope="col"></th>
+             <th scope="col">Details</th>
+             <th scope="col">Edit Lesson</th>
+             <th scope="col">Delete Lesson</th>
            </tr>
          </thead>
          <tbody>
@@ -19,11 +21,19 @@
              <tr>
                <td>{{lesson_number}}</td>
                <td>{{lesson_title}}</td>
-               <td><a href="/classes/{{../class._id}}/lessons/{{lesson_number}}">View Lessons</a></td>
+               <td><a href="/classes/{{../class._id}}/lessons/{{lesson_number}}">View Lesson</a></td>
+               <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/edit">Edit Lesson</a></td>
+               <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/delete">Delete Lesson</a></td>
              </tr>
            {{/each}}
          </tbody>
        </table>
+       {{#if instructor}}
+         <div class="container">
+           <a href="/instructors/classes/{{class.id}}/lessons/new" role="button" class="btn btn-custom">Add New Lesson</a>
+           <a href="/instructors/classes/" role="button" class="btn btn-custom">Back to classes</a>
+         </div>
+       {{/if}}
      </div>
    </main>
  </div>

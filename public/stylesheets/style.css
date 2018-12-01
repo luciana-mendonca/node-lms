@@ -4,6 +4,7 @@ body {
   height: 100%;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #2E2E2E;
 }
 
 h1 {
@@ -14,14 +15,40 @@ h1 {
   font-family: 'Yesteryear', cursive;
 }
 
+.bg-dark {
+  background-color: #2E2E2E !important;
+  opacity: 0.3;
+  filter:(opacity=50);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.nav-item {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.nav-item a {
+  color: white !important;
+  /*color: #2E2E2E !important;*/
+}
+
 .banner {
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/bg2.jpg');
-  height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/bg4.jpg');
+  height: 1000px;
+  top: 0px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
+
+.jumbotron {
+  width: 100%;
+}
+
 .box div{
   font-size: 1.4rem;
   background-color: #fff;
@@ -42,3 +69,26 @@ h1 {
   text-align: justify;
   box-shadow: 10px 10px 10px 7px rgba(0,0,0,.7);
 }
+
+.btn-custom {
+  background-color: #b8bad6;
+  border: transparent;
+  transition: 0.4s;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 5px 4px 5px 3px rgba(0,0,0,.7);
+}
+
+.btn-custom:hover {
+  background-color: #b39ddb;
+}
+
+a {
+  color: #2E2E2E;
+}
+
+a:hover {
+  color: #2E2E2E;
+}
+
+/*Dashboard*/
