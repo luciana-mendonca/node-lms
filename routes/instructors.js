@@ -31,7 +31,7 @@ router.post('/classes/register', function(req, res) {
   res.redirect('/instructors/classes');
 });
 
-// Lessons
+// Lesson form
 router.get('/classes/:id/lessons/new', function(req, res, next) {
   res.render('instructors/newlesson', {title: 'New Lesson', class_id: req.params.id});
 });
@@ -94,7 +94,7 @@ router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) 
         throw err;
       }
       req.flash('success_msg', 'Lesson updated.');
-      res.render('instructors/classes', {instructor: instructor, lesson_number: lesson.lesson_number, lesson_title: lesson.lesson_title, lesson_body: lesson.lesson_body});
+      res.redirect('/classes/' + class_id + '/lessons');
     });
   });
 });
