@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Class = require('../models/class');
 
+var User = require('../models/user');
+
 // All courses
 router.get('/', function(req, res, next) {
   Class.getClasses(function(err, classes) {
@@ -25,13 +27,23 @@ router.get('/:id/details', function(req, res, next) {
 
 // Lessons
 router.get('/:id/lessons', isLoggedIn, function(req, res, next) {
+  var user = req.user;
   var id = req.params.id;
-  Class.getClassById(id, function(err, classname) {
-    if(err) {
-      throw err;
-    }
-    res.render('classes/lessons', { class: classname });
-  });
+  if(user.type == 'student') {
+    Class.getClassById(id, function(err, classname) {
+      if(err) {
+        throw err;
+      }
+      res.render('students/lessons', { class: classname});
+    });
+  } else {
+    Class.getClassById(id, function(err, classname) {
+      if(err) {
+        throw err;
+      }
+      res.render('classes/lessons', { class: classname});
+    });
+  };
 });
 
 router.get('/:id/lessons/:lesson_id', isLoggedIn, function(req, res, next) {
