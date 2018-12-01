@@ -79,3 +79,39 @@ module.exports.updateLesson = function (info, callback) {
     );
   });
 };
+// Delete Lesson
+module.exports.deleteLesson = function (info, callback) {
+  class_id = info['class_id'];
+  lesson_number = info['lesson_number'];
+
+  Class.findByIdAndUpdate(
+    class_id,
+    {$pull: {"lessons": {lesson_number: lesson_number}}},
+    {safe: true},
+    callback
+  );
+  // Class.findById(class_id, function (err, classname) {
+  //   if (err) {
+  //     throw err;
+  //   }
+  //   //
+  //   // var lessons = classname.lessons;
+  //   // var lesson;
+  //   //
+  //   // for(var i = 0; i < lessons.length; i++) {
+  //   //   if(lessons[i].lesson_number == lesson_number) {
+  //   //     lesson = lessons[i];
+  //   //     lesson.lesson_number = lesson_number;
+  //   //     lesson.lesson_title = lesson_title;
+  //   //     lesson.lesson_body = lesson_body;
+  //   //   }
+  //   // }
+  //   //
+  //   // Class.findByIdAndUpdate(
+  //   //   class_id,
+  //   //   {$pull: {"lessons": {lesson_number: lesson_number}}},
+  //   //   {safe: true},
+  //   //   callback
+  //   );
+  // });
+};

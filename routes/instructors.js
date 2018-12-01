@@ -99,4 +99,21 @@ router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) 
   });
 });
 
+// Delete lesson
+router.get('/classes/:id/lesson/:lesson_number/delete', function(req, res, next) {
+  var lesson_number = req.params.lesson_number;
+  var info = [];
+
+  info['class_id'] = req.params.id;
+  info['lesson_number'] = req.params.lesson_number;
+
+  Class.deleteLesson(info, function(err) {
+    if(err) {
+      throw err;
+    }
+    req.flash('success_msg', 'Lesson deleted.');
+    res.redirect('back');
+  });
+});
+
 module.exports = router;

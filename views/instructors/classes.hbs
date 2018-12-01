@@ -9,7 +9,6 @@
              <thead class="" style="background-color: #b8bad6;">
                <br />
                <tr>
-                 <th scope="col">ClassID</th>
                  <th scope="col">Class Name</th>
                  <th scope="col">All Lessons</th>
                  <th scope="col">Create Lesson</th>
@@ -18,7 +17,6 @@
              <tbody>
                {{#each instructor.classes}}
                  <tr>
-                   <td>{{class_id}}</td>
                    <td>{{class_title}}</td>
                    <td><a href="/classes/{{class_id}}/lessons">View Lessons</a></td>
                    <td><a href="/instructors/classes/{{class_id}}/lessons/new">Add New Lesson</a></td>
