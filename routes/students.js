@@ -5,10 +5,8 @@ var User = require('../models/user');
 var Student = require('../models/student');
 var Class = require('../models/class');
 
-
-
 // Student classes
-router.get('/classes', function(req, res, next) {
+router.get('/classes', isLoggedIn, function(req, res, next) {
   Student.getStudentByUsername(req.user.username, function(err, student) {
     if(err) {
       throw err;
@@ -17,7 +15,7 @@ router.get('/classes', function(req, res, next) {
   });
 });
 
-router.post('/classes/register', function(req, res) {
+router.post('/classes/register', isLoggedIn, function(req, res) {
   var info = [];
   info['student_username'] = req.user.username;
   info['class_id'] = req.body.class_id;
@@ -33,4 +31,13 @@ router.post('/classes/register', function(req, res) {
   res.redirect('/students/classes');
 });
 
+// Access Control
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  } else {
+    req.flash('You must login to access this page.');
+    res.redirect('/users/signin');
+  }
+};
 module.exports = router;

@@ -102,7 +102,7 @@ router.get('/signin', function(req, res, next) {
 router.post('/signin', passport.authenticate('local', {failureRedirect: '/users/signin', failureFlash: true}), function(req, res, next) {
   req.flash('success_msg', 'Logged in.');
   var usertype = req.user.type;
-  res.redirect('/'+usertype+'s/classes');
+  res.redirect('/');
 });
 
 passport.use(new LocalStrategy(

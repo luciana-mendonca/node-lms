@@ -24,7 +24,7 @@ router.get('/:id/details', function(req, res, next) {
 });
 
 // Lessons
-router.get('/:id/lessons', function(req, res, next) {
+router.get('/:id/lessons', isLoggedIn, function(req, res, next) {
   var id = req.params.id;
   Class.getClassById(id, function(err, classname) {
     if(err) {
@@ -34,7 +34,7 @@ router.get('/:id/lessons', function(req, res, next) {
   });
 });
 
-router.get('/:id/lessons/:lesson_id', function(req, res, next) {
+router.get('/:id/lessons/:lesson_id', isLoggedIn, function(req, res, next) {
   var id = req.params.id;
   Class.getClassById(id, function(err, classname) {
     var lesson;
@@ -51,5 +51,14 @@ router.get('/:id/lessons/:lesson_id', function(req, res, next) {
   });
 });
 
+// Access Control
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  } else {
+    req.flash('You must login to access this page.');
+    res.redirect('/users/signin');
+  }
+};
 
 module.exports = router;

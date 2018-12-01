@@ -6,7 +6,7 @@ var Instructor = require('../models/instructor');
 var Class = require('../models/class');
 
 // Instructor classes
-router.get('/classes', function(req, res, next) {
+router.get('/classes', isLoggedIn, function(req, res, next) {
   Instructor.getInstructorByUsername(req.user.username, function(err, instructor) {
     if(err) {
       throw err;
@@ -15,7 +15,7 @@ router.get('/classes', function(req, res, next) {
   });
 });
 
-router.post('/classes/register', function(req, res) {
+router.post('/classes/register', isLoggedIn, function(req, res) {
   var info = [];
   info['instructor_username'] = req.user.username;
   info['class_id'] = req.body.class_id;
@@ -32,12 +32,12 @@ router.post('/classes/register', function(req, res) {
 });
 
 // Lesson form
-router.get('/classes/:id/lessons/new', function(req, res, next) {
+router.get('/classes/:id/lessons/new', isLoggedIn, function(req, res, next) {
   res.render('instructors/newlesson', {title: 'New Lesson', class_id: req.params.id});
 });
 
 // Create new lesson
-router.post('/classes/:id/lessons/new', function(req, res, next) {
+router.post('/classes/:id/lessons/new', isLoggedIn, function(req, res, next) {
   var info = [];
   info['class_id'] = req.params.id;
   info['lesson_number'] = req.body.lesson_number;
@@ -54,7 +54,7 @@ router.post('/classes/:id/lessons/new', function(req, res, next) {
 });
 
 // Edit lesson form
-router.get('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) {
+router.get('/classes/:id/lesson/:lesson_number/edit', isLoggedIn, function(req, res, next) {
   var lesson_number = req.params.lesson_number;
   var id = req.params.id;
 
@@ -74,7 +74,7 @@ router.get('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) {
   });
 });
 
-router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) {
+router.post('/classes/:id/lesson/:lesson_number/edit',  isLoggedIn, function(req, res, next) {
   var lesson_number = req.params.lesson_number;
   var id = req.params.id;
   var info = [];
@@ -100,7 +100,7 @@ router.post('/classes/:id/lesson/:lesson_number/edit', function(req, res, next) 
 });
 
 // Delete lesson
-router.get('/classes/:id/lesson/:lesson_number/delete', function(req, res, next) {
+router.get('/classes/:id/lesson/:lesson_number/delete',  isLoggedIn, function(req, res, next) {
   var lesson_number = req.params.lesson_number;
   var info = [];
 
@@ -116,4 +116,13 @@ router.get('/classes/:id/lesson/:lesson_number/delete', function(req, res, next)
   });
 });
 
+// Access Control
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  } else {
+    req.flash('You must login to access this page.');
+    res.redirect('/users/signin');
+  }
+};
 module.exports = router;
