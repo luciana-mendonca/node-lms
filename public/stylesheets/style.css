@@ -16,8 +16,9 @@ h1 {
   font-family: 'Yesteryear', cursive;
 }
 
+/*Navbar*/
 .bg-dark {
-  background-color: #2E2E2E !important;
+  background-color: rgba(46, 46, 46, 1) !important;
   opacity: 0.3;
   filter:(opacity=50);
 }
@@ -33,7 +34,18 @@ h1 {
 
 .nav-item a {
   color: white !important;
-  /*color: #2E2E2E !important;*/
+}
+
+.navbar .dropdown-menu {
+  background-color: rgba(46, 46, 46, 1) !important;
+}
+
+.navbar .dropdown-menu a{
+  color: white !important;
+}
+
+.navbar .dropdown-menu a:hover{
+  color: #2E2E2E !important;
 }
 
 .banner {
@@ -95,22 +107,35 @@ a:hover {
 }
 
 .cool-link {
-    display: inline-block;
-    color: #000;
-    text-decoration: none;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
 }
 
 .cool-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #000;
-    transition: width .3s;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #bff0ef;
+  transition: width .3s;
 }
 
 .cool-link:hover::after {
-    width: 100%;
-    //transition: width .3s;
+  width: 100%;
 }
+
+/*Errors*/
+.alert {
+  margin-top: 7%;
+  position: absolute;
+  z-index: 1;
+  border-style: none;
+  color: #2E2E2E;
+}
+
+.alert-success {
+  background-color: #b8bad6;
+}
+
 /*Dashboard*/
