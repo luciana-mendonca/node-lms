@@ -7,12 +7,18 @@ var Class = require('../models/class');
 
 // Instructor classes
 router.get('/classes', isLoggedIn, function(req, res, next) {
-  Instructor.getInstructorByUsername(req.user.username, function(err, instructor) {
-    if(err) {
-      throw err;
-    }
-    res.render('instructors/classes', {instructor: instructor});
-  });
+  var user = req.user;
+  if(user.type == 'instructor') {
+    Instructor.getInstructorByUsername(req.user.username, function(err, instructor) {
+      if(err) {
+        throw err;
+      }
+      res.render('instructors/classes', {instructor: instructor});
+    });
+  } else {
+    req.flash('error_msg', 'You must login as an instructor to access this page!');
+    res.redirect('back');
+  };
 });
 
 router.post('/classes/register', isLoggedIn, function(req, res) {
