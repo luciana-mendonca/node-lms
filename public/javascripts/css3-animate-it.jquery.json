@@ -1,0 +1,29 @@
+{
+  "name": "css3-animate-it",
+  "title": "CSS3 Animate It",
+  "description": "CSS3/jQuery plugin to animate elements as they come into view",
+  "keywords": [
+    "jquery",
+    "css3",
+    "plugins",
+    "animate"
+  ],
+  "version": "1.0.3",
+  "author": {
+    "name": "Jack McCourt",
+    "url": "https://github.com/Jack-McCourt/css3-animate-it"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/Jack-McCourt/css3-animate-it/issues",
+  "homepage": "http://css3-animate-it.jackonthe.net/",
+  "docs": "http://css3-animate-it.jackonthe.net/",
+  "download": "https://github.com/Jack-McCourt/css3-animate-it.git",
+  "dependencies": {
+    "jquery": ">=1.4"
+  }
+}

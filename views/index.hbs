@@ -1,59 +1,77 @@
-<div class="banner"></div>
-<div>
-  {{#if user}}
-    <div class="jumbotron">
-      <h1>Welcome back, {{user.username}}!</h1>
+<div class="banner">
+    <p class="scroll-down bounce">Scroll down
       <br />
-      <a href="/{{type}}s/classes" role="button" class="btn btn-custom">Dashboard</a>
-    </div>
-  {{else}}
-    <div class="jumbotron">
-      <h1>Welcome To E-learn</h1>
-      <p>Lorem ipsum dolor sit amet, consectetuer <em>adipiscing elit</em>, sed diam nonummy nibh euismod
-      tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-      nostrud exerci tation <strong>ullamcorper suscipit lobortis</strong> nisl ut aliquip ex ea commodo consequat.
-      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-      <div class="text-center">
-        <a href="/users/signup" role="button" class="btn btn-custom">Sign up for free</a>
-      </div>
-    </div>
-  {{/if}}
-  <br />
-  <br />
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-1">
-        <img src="https://res.cloudinary.com/di7m4tijz/image/upload/v1543584010/code-flat_qujzju.png" />
-        <h4 class="my-4 font-weight-bold">Programming</h4>
-        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-            maiores nam,
-            aperiam minima
-            assumenda deleniti hic.</p>
-      </div>
-      <div class="col-md-4 mb-1">
-        <img src="https://res.cloudinary.com/di7m4tijz/image/upload/c_scale,w_256/v1543584037/1024px-Circle-icons-computer.svg_dhnpn6.png">
-        <h4 class="my-4 font-weight-bold">Programming</h4>
-        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-            maiores nam,
-            aperiam minima
-            assumenda deleniti hic.</p>
-      </div>
-      <div class="col-md-4 mb-1">
-        <img src="https://res.cloudinary.com/di7m4tijz/image/upload/v1543585403/seo-web-code_razgvd.ico">
-        <h4 class="my-4 font-weight-bold">Programming</h4>
-        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-            maiores nam,
-            aperiam minima
-            assumenda deleniti hic.</p>
-      </div>
-    </div>
-    <br />
-    <hr />
+      <i class="fas fa-angle-double-down"></i>
+    </p>
   </div>
-  <div>
-    {{> classes }}
+    {{#if user}}
+      <div class="animatedParent">
+        <div class="jumbotron animated fadeInDown">
+          <h1>Welcome back, {{user.username}}!</h1>
+          <br />
+          <a href="/{{type}}s/classes" role="button" class="btn btn-custom">Dashboard</a>
+        </div>
+      </div>
+    {{else}}
+      <div class="animatedParent">
+        <div class="jumbotron animated fadeInDown">
+          <h2>Welcome To Code Studio</h2>
+          <p>Lorem ipsum dolor sit amet, consectetuer <em>adipiscing elit</em>, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+          nostrud exerci tation <strong>ullamcorper suscipit lobortis</strong> nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+          <div class="text-center">
+            <a href="/users/signup" role="button" class="btn btn-custom">Sign up for free</a>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+    <br />
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-1 animatedParent">
+          <img class="animated rotateInDownLeft" src="https://res.cloudinary.com/di7m4tijz/image/upload/v1543584010/code-flat_qujzju.png" />
+          <h4 class="my-4 font-weight-bold">Programming</h4>
+          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+              maiores nam,
+              aperiam minima
+              assumenda deleniti hic.</p>
+        </div>
+        <div class="col-md-4 mb-1 animatedParent">
+          <img class="animated rollIn" src="https://res.cloudinary.com/di7m4tijz/image/upload/c_scale,w_256/v1543584037/1024px-Circle-icons-computer.svg_dhnpn6.png">
+          <h4 class="my-4 font-weight-bold">Programming</h4>
+          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+              maiores nam,
+              aperiam minima
+              assumenda deleniti hic.</p>
+        </div>
+        <div class="col-md-4 mb-1 animatedParent">
+          <img class="animated rotateInDownRight" src="https://res.cloudinary.com/di7m4tijz/image/upload/v1543585403/seo-web-code_razgvd.ico">
+          <h4 class="my-4 font-weight-bold" id="gallery-title">Programming</h4>
+          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+              maiores nam,
+              aperiam minima
+              assumenda deleniti hic.</p>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+    <div>
+      {{> classes }}
+    </div>
+  </div>
+  <div class="animatedParent">
+    <div class="jumbotron animated rotateInDownLeft" style="background-color:#b8bad6;">
+      <div>
+        <h2>About us</h2>
+        <p>In blandit eget orci vitae varius. Ut ex mauris, vestibulum sit amet orci at, cursus viverra risus. Vivamus porta accumsan tempor. Vestibulum molestie justo at ante venenatis, sed feugiat risus mattis. Sed sagittis arcu est, eget convallis erat egestas vel. Vestibulum quis lobortis arcu, vitae accumsan elit. Phasellus non lorem a eros suscipit viverra. Maecenas viverra blandit sodales. Praesent fermentum turpis non elit facilisis lobortis. Morbi eu lectus sed enim viverra bibendum.   Pellentesque commodo lectus vel nunc interdum iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed venenatis odio leo, in semper erat efficitur vitae.
+          Ut ornare ligula non enim molestie cursus. Sed blandit ac augue et malesuada. Duis tincidunt, neque in pretium suscipit, turpis nisi posuere turpis, vitae consectetur nulla magna sed leo. Aliquam volutpat odio nibh, et sagittis lacus interdum at. Curabitur lacinia nisi quam, vitae elementum lectus ultricies id. Fusce faucibus nisl sed faucibus molestie. Vestibulum eleifend lacus non purus rutrum, quis dapibus nisl ultrices. Donec iaculis sapien quis purus egestas, dictum dictum arcu aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sagittis lorem in mi convallis ornare. Pellentesque ac elit gravida, vehicula leo in, ornare dui.
+        </p>
+      </div>
+    </div>
   </div>
   <footer>
     {{> footer }}
   </footer>
-</div>
