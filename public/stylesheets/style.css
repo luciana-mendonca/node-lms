@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR|Oswald|Playfair+Display|Yesteryear');
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
 
 body {
   height: 100%;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1rem 'Playfair Display', sans-serif;;
   color: #2E2E2E;
 }
 
@@ -83,12 +84,33 @@ h1 {
   background-color: #b39ddb;
 }
 
+/*Links*/
 a {
   color: #2E2E2E;
 }
 
 a:hover {
   color: #2E2E2E;
+  text-decoration: none;
 }
 
+.cool-link {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    //transition: width .3s;
+}
 /*Dashboard*/

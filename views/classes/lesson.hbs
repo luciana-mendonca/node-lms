@@ -1,11 +1,24 @@
-<div class="container box-wrapper" style="margin-top: 5%;">
-  <h5 style="float:right;">{{class.title}}</h5>
-  <br />
-  <span class="text-center"><h2>{{lesson.lesson_title}}</h2></span>
-  <br />
+<link rel='stylesheet' href='/public/stylesheets/lesson.css' />
+<div id="wrapper">
   <div>
-    {{lesson.lesson_body}}
+    <section class="open-book">
+        <header>
+          <h1>{{class.title}}</h1>
+          <h6>{{class.instructor}}</h6>
+        </header>
+        <article>
+          <h2 class="chapter-title">{{lesson.lesson_title}}</h2>
+          <p>{{lesson.lesson_body}}</p>
+          <dl class="text-center">
+            <mark><a href="/classes/{{class._id}}/lessons" class="cool-link">Back to lessons</a></mark>
+          </dl>
+        </article>
+        <footer>
+          <ol id="page-numbers">
+              <li>1</li>
+              <li>2</li>
+          </ol>
+        </footer>
+    </section>
   </div>
-  <br />
-  <a href="/classes/{{class._id}}/lessons">Back to lessons</a>
 </div>
