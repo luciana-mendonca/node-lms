@@ -1,0 +1,300 @@
+/*Lesson*/
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+body {
+  background-color: #2E2E2E;
+}
+
+#wrapper {
+  margin-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100em;
+  background-color: #b8bad6;
+}
+
+/*** OPEN BOOK ***/
+.open-book {
+  background: #fff;
+  box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
+  color: #000;
+  padding: 4em;
+}
+
+.open-book * {
+  position: relative;
+}
+
+/* Highlight */
+.open-book *::-moz-selection {
+  background: rgba(222,255,0,0.75);
+}
+
+.open-book *::selection {
+  background: rgba(222,255,0,0.75);
+}
+
+/* Header/Footer */
+.open-book header {
+  padding-bottom: 1em;
+}
+
+.open-book header *,
+.open-book footer * {
+  font: 700 1em/1.25 'Playfair Display', sans-serif;
+  letter-spacing: 0.125em;
+  margin: 0;
+}
+
+.open-book header * {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.open-book footer {
+  padding-top: 1em;
+}
+
+.open-book footer #page-numbers {
+  display: none;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.open-book footer #page-numbers > li:last-child {
+  text-align: right;
+}
+
+/* Chapter Title */
+.open-book .chapter-title {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA2NCA2NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjQgNjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgICA8Zz4NCiAgICAJPHBhdGggZD0iTTAsMzJMMzIsMGwzMiwzMkwzMiw2NEwwLDMyeiBNOCwzMmwyNCwyNGwyNC0yNEwzMiw4TDgsMzJ6IE0xNiwzMmwxNi0xNmwxNiwxNkwzMiw0OEwxNiwzMnogTTI0LDMybDgsOGw4LThsLTgtOEwyNCwzMnoiIC8+DQogICAgPC9nPg0KPC9zdmc+) bottom center no-repeat;
+  background-size: 0.5em 0.5em;
+  font: 700 7vw/1.25 'Playfair Display', sans-serif;
+  letter-spacing: 0.125em;
+  margin: 0 0 1em 0;
+  padding: 1em 0;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.open-book .chapter-title:before,
+.open-book .chapter-title:after {
+  border: solid 0 #000;
+  border-width: 0.05em 0;
+  bottom: calc((0.125em / 2) * 3);
+  content: '';
+  height: 0.15em;
+  position: absolute;
+  width: calc(50% - (1em / 2));
+}
+
+.open-book .chapter-title:before {
+  left: 0;
+}
+
+.open-book .chapter-title:after {
+  right: 0;
+}
+
+/* Body Copy */
+.open-book article {
+  line-height: 2;
+}
+
+.open-book article *:not(.chapter-title):not(hr):not(dl) {
+  margin: 0 auto;
+  max-width: 43.125em;
+}
+
+.open-book article p {
+  text-indent: 2em;
+  font-size: 1.3rem;
+}
+
+.open-book .chapter-title + p:first-of-type {
+  text-indent: 0;
+}
+
+.open-book .chapter-title + p:first-of-type:first-letter {
+  float: left;
+  font: 700 3em/0.65 'Playfair Display', sans-serif;
+  padding: 0.15em 0.05em 0 0;
+  text-transform: uppercase;
+}
+
+.open-book article > ul,
+.open-book article > ol {
+  padding-left: 3em;
+}
+
+.open-book article > ul ul {
+  padding-left: 1em;
+}
+
+.open-book mark {
+  background: #b8bad6;
+}
+
+.open-book hr {
+  background-color: #000;
+  border: 0;
+  height: 2px;
+  margin: 1em 0;
+}
+
+.open-book dl {
+  border: solid 0 #ccc;
+  border-width: 0.0625em 0;
+  break-inside: avoid-column;
+  margin: 1em auto;
+  padding: 1em 0;
+}
+
+/*** MEDIA QUERIES ***/
+@media only screen and ( min-width: 50em ) {
+  .open-book {
+    margin: 1em;
+    position: relative;
+  }
+
+  .open-book:before {
+    background-color: #b8bad6;
+    border-radius: 0.25em;
+    bottom: -1em;
+    content: '';
+    left: -1em;
+    position: absolute;
+    right: -1em;
+    top: -1em;
+    z-index: -1;
+  }
+
+  .open-book:after {
+    background: linear-gradient(to right, transparent 0%,rgba(0,0,0,0.2) 46%,rgba(0,0,0,0.5) 49%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.5) 51%,rgba(0,0,0,0.2) 52%,transparent 100%);
+    bottom: -1em;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: -1em;
+    transform: translate(-50%,0);
+    width: 4em;
+    z-index: 1;
+  }
+
+  .open-book > * {
+    column-count: 2;
+    column-gap: 6em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header/Footer */
+  .open-book header:before,
+  .open-book header:after,
+  .open-book footer:before,
+  .open-book footer:after {
+    background: #fff;
+    border-radius: 25%;
+    content: '';
+    height: 2em;
+    position: absolute;
+    z-index: -1;
+    width: calc(50% + 2em);
+  }
+
+  .open-book header:before,
+  .open-book footer:before,
+  .open-book footer:after {
+    border-top-left-radius: 0;
+  }
+
+  .open-book header:after,
+  .open-book footer:before,
+  .open-book footer:after {
+    border-top-right-radius: 0;
+  }
+
+  .open-book header:before,
+  .open-book header:after,
+  .open-book footer:after {
+    border-bottom-right-radius: 0;
+  }
+
+  .open-book header:before,
+  .open-book header:after,
+  .open-book footer:before {
+    border-bottom-left-radius: 0;
+  }
+
+  .open-book header:before,
+  .open-book header:after {
+    top: -2.65em;
+  }
+
+  .open-book header:before,
+  .open-book footer:before {
+    right: 50%;
+  }
+
+  .open-book header:before {
+    transform: rotate(-2deg);
+  }
+
+  .open-book header:after,
+  .open-book footer:after {
+    left: 50%;
+  }
+
+  .open-book header:after {
+    transform: rotate(2deg);
+  }
+
+  .open-book footer:before,
+  .open-book footer:after {
+    bottom: -2.65em;
+  }
+
+  .open-book footer:before {
+    transform: rotate(2deg);
+  }
+
+  .open-book footer:after {
+    transform: rotate(-2deg);
+  }
+
+  .open-book header > *:last-child,
+  .open-book footer > *:last-child {
+    text-align: right;
+  }
+
+  .open-book footer #page-numbers {
+    display: block;
+  }
+
+  /* Chapter Title */
+  .open-book .chapter-title {
+    font-size: 3em;
+  }
+
+  .open-book .chapter-title:before,
+  .open-book .chapter-title:after {
+    height: 0.125em;
+  }
+
+  /* Body Copy */
+  .open-book article p {
+    text-indent: 3em;
+  }
+
+  .open-book article > ul,
+  .open-book article > ol {
+    padding-left: 4em;
+  }
+}
