@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR|Oswald|Playfair+Display|Yesteryear');
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
 
 body {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   margin: 0;
-  font: 1rem 'Playfair Display', sans-serif;;
+  font: 1.2rem 'Merriweather', serif;
   color: #2E2E2E;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -16,32 +20,36 @@ h1 {
   font-family: 'Yesteryear', cursive;
 }
 
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 /*Navbar*/
 .bg-dark {
-  background-color: rgba(46, 46, 46, 1) !important;
-  opacity: 0.3;
-  filter:(opacity=50);
+  background-color: rgba(0,0,0,0.3)!important;
 }
 
 .navbar-brand {
   font-weight: bold;
   font-size: 1.3rem;
 }
+
 .nav-item {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .nav-item a {
-  color: white !important;
+  color: #fff !important;
 }
 
 .navbar .dropdown-menu {
-  background-color: rgba(46, 46, 46, 1) !important;
+  background-color: rgba(0,0,0,0.3)!important;
 }
 
 .navbar .dropdown-menu a{
-  color: white !important;
+  color: #fff !important;
 }
 
 .navbar .dropdown-menu a:hover{
@@ -58,14 +66,16 @@ h1 {
   background-size: cover;
 }
 
+/*Scroll down text*/
 .scroll-down {
-    text-align: center;
-    position: absolute;
-    top: 82%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+  text-align: center;
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
+
 .bounce {
 	animation: bounce 0.5s ease-in infinite alternate;
 }
@@ -96,7 +106,7 @@ h1 {
   padding: 5%;
   height: 90%;
   text-align: justify;
-  box-shadow: 10px 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow: 5px 5px 5px 3px rgba(0,0,0,.7);
 }
 
 .box-wrapper {
@@ -106,7 +116,7 @@ h1 {
   margin-bottom: 3rem;
   padding: 5%;
   text-align: justify;
-  box-shadow: 10px 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow: 5px 5px 5px 3px rgba(0,0,0,.7);
 }
 
 .btn-custom {
@@ -115,13 +125,21 @@ h1 {
   transition: 0.4s;
   font-size: 16px;
   padding: 10px;
-  box-shadow: 5px 4px 5px 3px rgba(0,0,0,.7);
 }
 
 .btn-custom:hover {
-  background-color: #b39ddb;
+  background-color: #2E2E2E;
+  color: #fff;
 }
 
+select {
+  background-color: #fff;
+  border-color: #b8bad6;
+  transition: 0.4s;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 3px;
+}
 /*Links*/
 a {
   color: #2E2E2E;
@@ -143,7 +161,7 @@ a:hover {
   display: block;
   width: 0;
   height: 2px;
-  background: #bff0ef;
+  background: #b8bad6;
   transition: width .3s;
 }
 
@@ -162,6 +180,19 @@ a:hover {
 
 .alert-success {
   background-color: #b8bad6;
+}
+
+/*Featured Courses*/
+.line {
+  border-left: 1px solid #263238;
+}
+.line:first-child {
+  border-left: none;
+}
+/*About*/
+.about {
+  border-left: 3px solid #263238;
+  height: 5%;
 }
 
 /*Dashboard*/

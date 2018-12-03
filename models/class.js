@@ -12,6 +12,9 @@ var ClassSchema = mongoose.Schema({
   instructor: {
     type: String
   },
+  img_url: {
+    type: String
+  },
   lessons: [{
     lesson_number: {type: Number},
     lesson_title: {type: String},

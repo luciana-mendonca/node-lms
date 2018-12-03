@@ -1,15 +1,26 @@
 <div class="jumbotron">
-    <h2>Featured Classes</h2>
-  <div style="padding-left: 15%;">
+  <div class="text-center" style="width: 100%;">
+    <div class="container" style="padding-bottom: 5%;">
+      <h1>Featured Classes</h1>
+      <br />
+      <p>Integer non dui vehicula, sollicitudin tortor vitae, vestibulum purus. Nullam efficitur,
+        odio quis accumsan fringilla, risus neque auctor diam, quis lacinia turpis mi non sem.
+      </p>
+      <br />
+      <hr />
+      <br />
+    </div>
     <div class="row">
       {{#each classes}}
-      <div class="col-md-5 col-md-offset-2 pr-5 animatedParent box">
-        <div class="animated growIn">
-          <h4>{{title}}</h4>
-          <p>{{description}}</p>
+      <div class="col animatedParent">
+        <a href="/classes/{{_id}}/details">
+        <div class="animated fadeInUp">
+          <img src="{{img_url}}"style="width: 20%; height: 20%;" />
+          <h3><strong>{{title}}</strong></h3>
           <br />
-          <a href="/classes/{{_id}}/details" class="cool-link">View Class</a>
+          <br />
         </div>
+      </a>
       </div>
       {{/each}}
     </div>
