@@ -12,8 +12,8 @@
              <th scope="col">Lesson Number</th>
              <th scope="col">Lesson Title</th>
              <th scope="col">Details</th>
-             <th scope="col">Edit Lesson</th>
-             <th scope="col">Delete Lesson</th>
+             <th scope="col">Edit</th>
+             <th scope="col">Delete</th>
            </tr>
          </thead>
          <tbody>
@@ -21,15 +21,23 @@
              <tr>
                <td>{{lesson_number}}</td>
                <td>{{lesson_title}}</td>
-               <td><a href="/classes/{{../class._id}}/lessons/{{lesson_number}}" class="cool-link">View Lesson</a></td>
-               <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/edit" class="cool-link">Edit Lesson</a></td>
-               <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/delete" class="cool-link">Delete Lesson</a></td>
+               <td><a href="/classes/{{../class._id}}/lessons/{{lesson_number}}" class="cool-link"><img src="https://img.icons8.com/dusk/50/000000/show-property.png" alt="View"></a></td>
+               <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/edit" class="cool-link"><img src="https://img.icons8.com/dusk/50/000000/edit-property.png" alt="Edit"></a></td>
+               <td><a href="/instructors/classes/{{../class._id}}/lesson/{{lesson_number}}/delete" class="cool-link"><img src="https://img.icons8.com/dusk/50/000000/delete-property.png" alt="Delete"></a></td>
              </tr>
            {{/each}}
          </tbody>
        </table>
-        <a href="/instructors/classes/{{class.id}}/lessons/new" role="button" class="btn btn-custom">Add New Lesson</a>
-        <a href="/instructors/classes/" role="button" class="btn btn-custom">Back to classes</a>
+       <hr />
+       <br />
+        <div class="row">
+          <div class="col col-md-5">
+            <a href="/instructors/classes/{{class.id}}/lessons/new" class="cool-link"><img src="https://img.icons8.com/dusk/50/000000/add-property.png">Add New Lesson</a>
+          </div>
+          <div class="col col-md-5">
+            <a href="/instructors/classes/" class="cool-link"><img src="/public/images/back.png" style="width:50px;">Back to Classes</a>
+          </div>
+        </div>
      </div>
    </main>
  </div>

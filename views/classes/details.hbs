@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 5%;">
+<div class="container" style="margin-top: 8%; margin-bottom: 8%;">
   <h1>{{class.title}}</h1>
   <p>Instructor: <strong>{{class.instructor}}</strong></p>
   <div class="row box-wrapper">
@@ -10,7 +10,6 @@
       {{/each}}
     </ul>
   </div>
-
 <!--Enroll class-->
   {{#if user}}
     <form method="post" action="/{{type}}s/classes/register">
