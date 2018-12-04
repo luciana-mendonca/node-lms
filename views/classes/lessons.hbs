@@ -5,9 +5,9 @@
        <h1>{{class.title}}</h1>
        <br />
      </span>
-     <div class="container">
-       <table class="table">
-         <thead class="" style="background-color: #b8bad6;">
+     <div class="text-center">
+       <table class="table box-wrapper">
+         <thead class="text-center" style="background-color: #b8bad6;">
            <tr>
              <th scope="col">Lesson Number</th>
              <th scope="col">Lesson Title</th>
@@ -16,7 +16,7 @@
              <th scope="col">Delete</th>
            </tr>
          </thead>
-         <tbody>
+         <tbody class="text-center">
            {{#each class.lessons}}
              <tr>
                <td>{{lesson_number}}</td>
@@ -28,8 +28,8 @@
            {{/each}}
          </tbody>
        </table>
-       <hr />
        <br />
+      <div class="container text-center" style="margin-left: 25%;">
         <div class="row">
           <div class="col col-md-5">
             <a href="/instructors/classes/{{class.id}}/lessons/new" class="cool-link"><img src="https://img.icons8.com/dusk/50/000000/add-property.png">Add New Lesson</a>
@@ -38,6 +38,7 @@
             <a href="/instructors/classes/" class="cool-link"><img src="/public/images/back.png" style="width:50px;">Back to Classes</a>
           </div>
         </div>
+      </div>
      </div>
    </main>
  </div>

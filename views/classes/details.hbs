@@ -2,6 +2,7 @@
   <h1>{{class.title}}</h1>
   <p>Instructor: <strong>{{class.instructor}}</strong></p>
   <div class="row box-wrapper">
+    <img src="{{class.img_url}}" style="width: 10%; height: 10%;padding-bottom: 5%;margin-left: 90%;">
     <p>{{class.description}}</p>
     </br>
     <ul>
@@ -16,7 +17,7 @@
       <input type="hidden" name="student_id" value="{{user._id}}">
       <input type="hidden" name="class_id" value="{{class._id}}">
       <input type="hidden" name="class_title" value="{{class.title}}">
-      <button type="submit" name="button" class="btn btn-custom">Register for this class</button>
+      <button type="submit" name="button" class="btn btn-custom" style="margin-left: 40%;">Register for this class</button>
     </form>
   {{else}}
     <p class="text-center">You must <a href="/users/signin" class="cool-link"><strong>log in</strong></a> to enroll in a class.</p>

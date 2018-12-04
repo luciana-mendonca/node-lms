@@ -1,15 +1,21 @@
-<div class="container" style="margin-top: 5%;">
-  <h1>{{title}}</h1>
-  <div class="row box">
-    {{#each classes}}
-    <div class="col-md-5 col-md-offset-2">
-      <h4>{{title}}</h4>
-      <p>{{description}}</p>
-      <a class="button cool-link" href="/classes/{{_id}}/details">Details</a>
+<div style="background-color: #b8bad6;">
+  <div>
+    <br />
+    <div class="row all-courses-row">
+      {{#each classes}}
+          <div class="col-md-5 all-courses">
+            <h4><img src="https://img.icons8.com/dusk/40/000000/source-code.png"> {{title}}</h4>
+            <hr />
+            <br />
+            <p>{{description}}</p>
+            <br />
+            <a class="button cool-link" href="/classes/{{_id}}/details" style="border: 2px solid #b8bad6; border-radius: 3px; padding: 0.6rem;">Details</a>
+          </div>
+      {{/each}}
     </div>
-    {{/each}}
   </div>
+  <footer>
+    {{> footer }}
+  </footer>
+
 </div>
-<footer>
-  {{> footer }}
-</footer>

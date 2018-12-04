@@ -7,7 +7,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   margin: 0;
-  font: 1.2rem 'Merriweather', serif;
+  font: 1rem 'Merriweather', serif;
   color: #2E2E2E;
   letter-spacing: 1px;
 }
@@ -97,15 +97,15 @@ h1 {
   border-radius: 0px;
 }
 
-.box div{
+.box div {
   font-size: 1.4rem;
   background-color: #fff;
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
   padding: 5%;
-  height: 90%;
-  text-align: justify;
+  min-height: 20vw;
+  min-width: 60vw;
   box-shadow: 5px 5px 5px 3px rgba(0,0,0,.7);
 }
 
@@ -188,6 +188,22 @@ a:hover {
 }
 .line:first-child {
   border-left: none;
+}
+
+/*All Courses*/
+.all-courses-row {
+  width: 100%;
+  margin-left: 6%;
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+
+.all-courses {
+  box-shadow: 5px 5px 5px 3px rgba(0,0,0,.7);
+  padding: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  background-color: #fff;
 }
 /*About*/
 .about {
