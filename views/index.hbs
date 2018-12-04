@@ -6,22 +6,21 @@
   </div>
     {{#if user}}
       <div class="animatedParent">
-        <div class="jumbotron animated fadeInDown">
+        <div class="jumbotron animated fadeInDown text-center">
           <h2>Welcome back, {{user.username}}!</h2>
           <br />
           <div class="text-center">
-            <a href="/{{type}}s/classes" role="button" class="btn btn-custom">Dashboard</a>
+            <a href="/{{type}}s/classes" role="button" class="btn btn-custom">Go to the Dashboard</a>
           </div>
         </div>
       </div>
     {{else}}
       <div class="animatedParent">
-        <div class="jumbotron animated fadeInDown">
-          <h2 class="text-center">Welcome To Code Studio</h2>
-          <p style="padding: 20px;">Lorem ipsum dolor sit amet, consectetuer <em>adipiscing elit</em>, sed diam nonummy nibh euismod
-          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-          nostrud exerci tation <strong>ullamcorper suscipit lobortis</strong> nisl ut aliquip ex ea commodo consequat.
-          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat!</p>
+        <div class="jumbotron animated fadeInDown text-center">
+          <h2 class="">Welcome To Code Studio</h2>
+          <p style="padding: 20px;">Coding is a skill unlike any other. Coding is the engine for
+            innovation that drives the world forward faster than ever before. And anyone can learn it.
+          </p>
           <div class="text-center">
             <a href="/users/signup" class="btn btn-custom">Start right now!</a>
           </div>
