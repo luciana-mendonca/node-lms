@@ -31,7 +31,6 @@ router.post('/classes/register', isLoggedIn, function(req, res) {
     if(err) {
       throw err;
     }
-    console.log(instructor);
   });
   req.flash('success_msg', 'You are now registered as a teacher of this class.');
   res.redirect('/instructors/classes');
