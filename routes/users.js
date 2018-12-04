@@ -76,7 +76,7 @@ router.post('/signup', function(req, res, next) {
     }
     // Flash message
     req.flash('success_msg', 'User added');
-    res.redirect('/');
+    res.render('user/signin');
   }
 });
 
